@@ -85,7 +85,7 @@
                 d = (0, u.tv)(),
                 { t: m, locale: w } = (0, r.QT)(),
                 h = (0, c.Z)(),
-                f = "wheelofnames.com",
+                f = "Sentencewheel.com",
                 v = (0, t.Fl)(() => "/" + (0, p.getNonEnglishLocale)(w.value)),
                 g = (0, t.Fl)(() => h.fullscreen.isActive),
                 k = (0, t.Fl)(() => a.getters.wheelIsBusy),
