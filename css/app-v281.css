@@ -8,9 +8,9 @@
 
 .q-pa-md {
     /* flex-direction: column-reverse !important; */
-    display: flex
+    display: flex !important
 ;
-    flex-direction: column-reverse;
+    flex-direction: column-reverse !important;
 }
 
 
