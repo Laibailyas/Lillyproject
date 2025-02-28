@@ -7708,7 +7708,7 @@
             null,
             [
               (0, t.Uk)(
-                " Do you want to create shared wheels from your software instead of through the Wheel of Names website? With the API you can for example: "
+                " Do you want to create shared wheels from your software instead of through the Sentence wheel website? With the API you can for example: "
               ),
               (0, t._)("ul", null, [
                 (0, t._)(
