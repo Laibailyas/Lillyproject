@@ -38,7 +38,7 @@
                     ? o("toolbar.Gallery")
                     : n.getters.wheelConfig.title
                     ? n.getters.wheelConfig.title
-                    : "Pop It Wheel | " + o("app.Random name picker")
+                    : "Pop It Wheel | " + o("Random Question Generator")
                 );
               (0, u.ZQf)(m);
               const g = (0, r.Fl)(() => n.getters.wheelConfig),
