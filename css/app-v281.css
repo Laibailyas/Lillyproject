@@ -22667,7 +22667,6 @@ input[type=number]:hover {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    /* border: 1px solid white; */
     z-index: 9999;
 }
 
@@ -22691,7 +22690,6 @@ input[type=number]:hover {
 
 .arrow-wrapper img{
     width: 150px;
-    background-color: #fff;
     z-index: 9999;
     position: absolute;
     top: 50%;
@@ -22708,10 +22706,6 @@ input[type=number]:hover {
     z-index: -1;
 }
 
-.selecting-balloons img{
-    background-color: blue;
-}
-
 .enable-selection{
     z-index: 9999;
 }
@@ -22720,10 +22714,9 @@ input[type=number]:hover {
     display: none;
 }
 
-.target-div, .target-div2{
+.target-div{
     width: 100px;
     height: 4px;
-    background-color: red;
     position: absolute;
     /* top: 20%; */
     top: 9.5vw;
@@ -22731,10 +22724,3 @@ input[type=number]:hover {
     transform: translateX(-50%);
     z-index: 9999;
 }
-
-/* .target-div2{
-    top: 9.5vw;
-    width: 50px;
-    background-color: green;
-    z-index: 10000;
-} */
