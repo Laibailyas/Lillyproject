@@ -763,10 +763,10 @@
 
         var keypressed = undefined;
 
-        document.onkeydown = function(evt) {
+        document.onkeydown = function (evt) {
           evt = evt || window.event;
-          if ( [48, 49, 50, 51, 52, 53, 54, 55, 56, 57].includes(evt.keyCode) ) {
-            if (keypressed == undefined || keypressed != evt.keyCode - 48) { 
+          if ([48, 49, 50, 51, 52, 53, 54, 55, 56, 57].includes(evt.keyCode)) {
+            if (keypressed == undefined || keypressed != evt.keyCode - 48) {
               (keypressed = evt.keyCode - 48)
             } else {
               (keypressed = undefined)
@@ -859,7 +859,7 @@
               e
             );
           }
-          draw(e) {          
+          draw(e) {
             this.wheelConfig &&
               this.wheelPainter.draw(
                 e,
@@ -901,6 +901,8 @@
                 decelAngle: this.decelAngle,
               }),
               (this.name = "AcceleratingState");
+            console.log('moving');
+            document.querySelector('.show-balloons').classList.remove('hide-balloon');
           }
           tick(e, a) {
             if (((e.angle += e.speed), this.age <= this.MAX_AGE)) {
@@ -939,33 +941,60 @@
         class c {
           constructor(e, a) {
             (e.angle = 2 * Math.PI * a()),
-            e.entryPicker.setRandomPosition(0),
-            (this.age = 0),
-            (this.MAX_AGE = e.getStateTimeLengths().decelerating);
+              e.entryPicker.setRandomPosition(0),
+              (this.age = 0),
+              (this.MAX_AGE = e.getStateTimeLengths().decelerating);
             const l = this.MAX_AGE,
-            t = e.speed,
-            n = 15e-5;
+              t = e.speed,
+              n = 15e-5;
             (this.deceleration = Math.exp(Math.log(n / t) / l)),
-            (this.name = "DeceleratingState");
+              (this.name = "DeceleratingState");
             if (keypressed != undefined) {
-              const angle = (Array.from({ length: e.getStateTimeLengths().decelerating }, (_, i) => e.speed * Math.pow(this.deceleration, i + 1)).reduce((acc, val) => acc + val, 0))%2;
-              const targetValue = [0, 1, 2, 3, 4].includes(keypressed) ? (keypressed+1) * (Math.PI / 6) : ((keypressed-4) * (Math.PI / 6)) + Math.PI
+              const angle = (Array.from({ length: e.getStateTimeLengths().decelerating }, (_, i) => e.speed * Math.pow(this.deceleration, i + 1)).reduce((acc, val) => acc + val, 0)) % 2;
+              const targetValue = [0, 1, 2, 3, 4].includes(keypressed) ? (keypressed + 1) * (Math.PI / 6) : ((keypressed - 4) * (Math.PI / 6)) + Math.PI
               const valueToAdd = angle < targetValue ? targetValue - angle : (targetValue + 2) - angle
               console.log(angle, valueToAdd);
               e.angle = valueToAdd;
             }
             console.log(this.deceleration, e.angle, keypressed)
+            // Start fading out balloons one by one
+            this.fadeOutBalloons();
           }
           tick(e) {
             (e.angle += e.speed),
               this.age <= this.MAX_AGE
-              ? ((e.speed = e.speed * this.deceleration), (this.age += 1))
+                ? ((e.speed = e.speed * this.deceleration), (this.age += 1))
                 : ((e.speed = 0), e.setNewState(new m(e, e.angle)));
-              }
-              click(e) { }
-              receiveFromNetwork(e, a) { }
-              isSpinning() {
-                return !0;
+          }
+
+          fadeOutBalloons() {
+            const balloonContainer = document.querySelector('.show-balloons'); // Select container
+            const balloons = balloonContainer ? balloonContainer.querySelectorAll('img') : [];
+
+            if (balloons.length > 0) {
+              setTimeout(() => {
+                balloons.forEach((balloon, index) => {
+                  setTimeout(() => {
+                    balloon.style.transition = 'opacity 1s ease';
+                    balloon.style.opacity = '0';
+
+                    // After the last balloon fades, add 'hide-balloon' class
+                    if (index === balloons.length - 1) {
+                      setTimeout(() => {
+                        balloonContainer.classList.add('hide-balloon');
+                        document.querySelector('.selecting-balloons').classList.add('enable-selection');
+                      }, 1000); // Wait for the last fade-out to complete
+                    }
+                  }, index * 500); // Delay each balloon by 500ms
+                });
+              }, 2000); // Initial delay of 2 seconds
+            }
+          }
+
+          click(e) { }
+          receiveFromNetwork(e, a) { }
+          isSpinning() {
+            return !0;
           }
         }
         class d {
@@ -1030,7 +1059,8 @@
           constructor(e, a) {
             (e.angle = a),
               (e.speed = 0),
-              e.onStateChangeCallback({ name: "Stopped", position: e.angle }),
+              console.log("✅ Wheel stopped at angle:", a);
+            e.onStateChangeCallback({ name: "Stopped", position: e.angle }),
               (this.name = "StoppedState");
           }
           tick(e) { }
@@ -7708,7 +7738,7 @@
             null,
             [
               (0, t.Uk)(
-                " Do you want to create shared wheels from your software instead of through the Pop It Wheel website? With the API you can for example: "
+                " Do you want to create shared wheels from your software instead of through the Sentence wheel website? With the API you can for example: "
               ),
               (0, t._)("ul", null, [
                 (0, t._)(
@@ -9502,5 +9532,6 @@
         }
         (n.keys = () => Object.keys(t)), (n.id = 30890), (e.exports = n);
       },
+
     },
   ]);
