@@ -1032,6 +1032,7 @@
                 position: e.angle,
               }),
               (this.name = "AnnounceWinnerState");
+              document.querySelector('.selecting-balloons').classList.remove('enable-selection')
           }
           tick(e) {
             e.spinIsDone(), e.setNewState(new p(e, e.angle));
