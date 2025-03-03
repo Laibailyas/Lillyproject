@@ -8,8 +8,7 @@
 
 .q-pa-md {
     /* flex-direction: column-reverse !important; */
-    display: flex !important
-;
+    display: flex !important;
     flex-direction: column-reverse !important;
 }
 
@@ -22660,3 +22659,82 @@ input[type=number]:hover {
 .animated-list-leave-active {
     position: absolute
 }
+
+.show-balloons {
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* border: 1px solid white; */
+    z-index: 9999;
+}
+
+.show-balloons div{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.show-balloons div img, .selecting-balloons img{
+    width: 80px;
+    height: auto;
+    object-fit: cover;
+}
+
+.hide-balloon, .hide-arrow{
+    opacity: 0;
+    z-index: -1;
+}
+
+.arrow-wrapper img{
+    width: 150px;
+    background-color: #fff;
+    z-index: 9999;
+    position: absolute;
+    top: 50%;
+    left: -100%;
+}
+
+.selecting-balloons{
+    width: 9%;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.selecting-balloons img{
+    background-color: blue;
+}
+
+.enable-selection{
+    z-index: 9999;
+}
+
+.hidden-selection{
+    display: none;
+}
+
+.target-div, .target-div2{
+    width: 100px;
+    height: 4px;
+    background-color: red;
+    position: absolute;
+    /* top: 20%; */
+    top: 9.5vw;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+}
+
+/* .target-div2{
+    top: 9.5vw;
+    width: 50px;
+    background-color: green;
+    z-index: 10000;
+} */
