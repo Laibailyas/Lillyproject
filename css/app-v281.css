@@ -22688,12 +22688,16 @@ input[type=number]:hover {
     z-index: -1;
 }
 
-.arrow-wrapper img{
+.arrow-wrapper{
     width: 150px;
     z-index: 9999;
     position: absolute;
     top: 50%;
     left: -100%;
+}
+
+.arrow-wrapper img{
+    width: 150px;
 }
 
 .selecting-balloons{
@@ -22718,8 +22722,9 @@ input[type=number]:hover {
     width: 100px;
     height: 4px;
     position: absolute;
-    /* top: 20%; */
-    top: 9.5vw;
+    top: 20%;
+    /* top: 0; */
+    /* background-color: red; */
     left: 50%;
     transform: translateX(-50%);
     z-index: 9999;
