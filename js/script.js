@@ -1,12 +1,17 @@
 // Balloon animation
 const balloons = document.querySelectorAll('.show-balloons img');
 const balloonContainer = document.querySelector('.show-balloons');
+let mainContainer = document.querySelector(".main")
 
 function animateBalloons() {
     const bounds = {
         width: balloonContainer.clientWidth,
         height: balloonContainer.clientHeight
     };
+
+    if (!mainContainer.classList.contains('winner-popup')) {
+        mainContainer.classList.add('winner-popup');
+    }
 
     balloons.forEach(balloon => {
         // Store a fixed horizontal position for each balloon
@@ -38,7 +43,6 @@ const selectingContainer = document.querySelector(".selecting-balloons");
 const popUpBalloons = document.querySelectorAll(".selecting-balloons > img");
 const arrowWrapper = document.querySelector(".arrow-wrapper");
 const targetDiv = document.querySelector(".target-div");
-let mainContainer = document.querySelector(".main")
 
 
 
@@ -80,7 +84,6 @@ function popContainer() {
     if (popUpBalloons.length === 0) return;
 
     const randomBalloon = popUpBalloons[Math.floor(Math.random() * popUpBalloons.length)];
-    console.log('Random balloon is: ', randomBalloon);
 
     randomBalloon.classList.remove("hidden-selection");
 
@@ -131,8 +134,6 @@ function chaseBalloon(selectedBalloon, arrowImage) {
             selectingContainer.classList.remove('enable-selection');
             balloonContainer.classList.add('hide-balloon');
             mainContainer.classList.remove('winner-popup')
-            console.log('Collision detected! Balloon is caught.');
-
             arrowImage.classList.add('hide-arrow');
 
             // Stop the chase after collision

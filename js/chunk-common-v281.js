@@ -925,7 +925,6 @@
                 decelAngle: this.decelAngle,
               }),
               (this.name = "AcceleratingState");
-            console.log('moving');
             document.querySelector('.show-balloons').classList.remove('hide-balloon');
           }
           tick(e, a) {
@@ -1033,8 +1032,6 @@
               }),
               (this.name = "AnnounceWinnerState");
               document.querySelector('.selecting-balloons').classList.remove('enable-selection')
-
-              document.querySelector('.main').classList.remove('winner-popup')
           }
           tick(e) {
             e.spinIsDone(), e.setNewState(new p(e, e.angle));
