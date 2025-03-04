@@ -174,7 +174,6 @@ const observer = new MutationObserver(() => {
     } else {
         // Restart animation
         animateBalloons();
-        fadeOutBalloons();
     }
 });
 
