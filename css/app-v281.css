@@ -22723,8 +22723,6 @@ input[type=number]:hover {
     height: 4px;
     position: absolute;
     top: 9.5vw;
-    /* top: 0; */
-    background-color: red;
     left: 50%;
     transform: translateX(-50%);
     z-index: 9999;
