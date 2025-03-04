@@ -22722,7 +22722,7 @@ input[type=number]:hover {
     width: 100px;
     height: 4px;
     position: absolute;
-    top: 20%;
+    top: 9.5vw;
     /* top: 0; */
     /* background-color: red; */
     left: 50%;
@@ -22747,6 +22747,26 @@ input[type=number]:hover {
 
 @media (max-width: 900px) {
     .mainWrapper {
-        top: 100%;
+        top: 665px;
+    }
+
+    .show-balloons div img, .selecting-balloons img{
+        width: 50px;
+    }
+    
+    
+    .arrow-wrapper{
+        width: 100px;
+    }
+    
+    .arrow-wrapper img{
+        width: 100px;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    .main, .mainWrapper{
+        height: 500px;
     }
 }
