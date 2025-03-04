@@ -277,7 +277,31 @@
         function h(e) {
           y("/sounds/Tick-DeepFrozenApps-397275646.mp3", e);
         }
+
+        function waitForClassRemoval(selector, className) {
+          return new Promise((resolve) => {
+              const element = document.querySelector(selector);
+              if (!element) return;
+
+              // If class is already removed, resolve immediately
+              if (!element.classList.contains(className)) {
+                  resolve();
+                  return;
+              }
+
+              // Observe class changes
+              const observer = new MutationObserver(() => {
+                  if (!element.classList.contains(className)) {
+                      observer.disconnect();
+                      resolve();
+                  }
+              });
+
+              observer.observe(element, { attributes: true, attributeFilter: ['class'] });
+          });
+      }
         async function p(e, a, l, t) {
+          await waitForClassRemoval('.main', 'winner-popup');
           if ("read-winner-sound" == e || "read-winner-sound-2" == e) {
             if (window.speechSynthesis && a) {
               const n = new SpeechSynthesisUtterance(a);
@@ -957,8 +981,6 @@
               e.angle = valueToAdd;
             }
             console.log(this.deceleration, e.angle, keypressed)
-            // Start fading out balloons one by one
-            this.fadeOutBalloons();
           }
           tick(e) {
             (e.angle += e.speed),
@@ -967,29 +989,6 @@
                 : ((e.speed = 0), e.setNewState(new m(e, e.angle)));
           }
 
-          fadeOutBalloons() {
-            const balloonContainer = document.querySelector('.show-balloons'); // Select container
-            const balloons = balloonContainer ? balloonContainer.querySelectorAll('img') : [];
-
-            if (balloons.length > 0) {
-              setTimeout(() => {
-                balloons.forEach((balloon, index) => {
-                  setTimeout(() => {
-                    balloon.style.transition = 'opacity 1s ease';
-                    balloon.style.opacity = '0';
-
-                    // After the last balloon fades, add 'hide-balloon' class
-                    if (index === balloons.length - 1) {
-                      setTimeout(() => {
-                        balloonContainer.classList.add('hide-balloon');
-                        document.querySelector('.selecting-balloons').classList.add('enable-selection');
-                      }, 1000); // Wait for the last fade-out to complete
-                    }
-                  }, index * 500); // Delay each balloon by 500ms
-                });
-              }, 2000); // Initial delay of 2 seconds
-            }
-          }
 
           click(e) { }
           receiveFromNetwork(e, a) { }
@@ -1024,6 +1023,7 @@
             return !0;
           }
         }
+        
         class m {
           constructor(e, a) {
             (e.angle = a),
@@ -1056,6 +1056,7 @@
             return !1;
           }
         }
+
         class p {
           constructor(e, a) {
             (e.angle = a),
@@ -1063,6 +1064,7 @@
               console.log("✅ Wheel stopped at angle:", a);
             e.onStateChangeCallback({ name: "Stopped", position: e.angle }),
               (this.name = "StoppedState");
+              document.querySelector('.selecting-balloons').classList.add('enable-selection');
           }
           tick(e) { }
           click(e) {
@@ -1092,6 +1094,7 @@
             return !1;
           }
         }
+        
       },
       45890: (e, a, l) => {
         "use strict";
@@ -9097,7 +9100,30 @@
                   I();
               }
               const U = (0, s.iH)(null);
-              function I() {
+              function waitForClassRemoval(selector, className) {
+                            return new Promise((resolve) => {
+                                const element = document.querySelector(selector);
+                                if (!element) return;
+
+                                // If class is already removed, resolve immediately
+                                if (!element.classList.contains(className)) {
+                                    resolve();
+                                    return;
+                                }
+
+                                // Observe class changes
+                                const observer = new MutationObserver(() => {
+                                    if (!element.classList.contains(className)) {
+                                        observer.disconnect();
+                                        resolve();
+                                    }
+                                });
+
+                                observer.observe(element, { attributes: true, attributeFilter: ['class'] });
+                            });
+                        }
+              async function I() {
+                await waitForClassRemoval('.main', 'winner-popup');
                 (0, t.Y3)(() => {
                   setTimeout(() => {
                     U && U.value.$el.focus();

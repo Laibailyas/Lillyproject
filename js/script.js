@@ -9,10 +9,15 @@ function animateBalloons() {
     };
 
     balloons.forEach(balloon => {
+        // Store a fixed horizontal position for each balloon
+        if (!balloon.dataset.initialX) {
+            balloon.dataset.initialX = Math.random() * (balloonContainer.clientWidth * 0.2);
+        }
+
         function moveBalloon() {
             gsap.set(balloon, {
-                y: -150, // Start above the container
-                x: () => Math.random() * (balloonContainer.clientWidth * 0.2), // Random horizontal position
+                y: "-300%", // Start above the container
+                x: parseFloat(balloon.dataset.initialX), // Use fixed initial horizontal position
                 opacity: 1,
             });
 
@@ -21,6 +26,7 @@ function animateBalloons() {
                 duration: Math.random() * 5 + 3, // Random duration (3 to 5 seconds)
                 delay: Math.random() * 2, // Random delay (0 to 2 seconds)
                 ease: 'linear',
+                onComplete: () => moveBalloon()
             });
         }
 
@@ -32,6 +38,9 @@ const selectingContainer = document.querySelector(".selecting-balloons");
 const popUpBalloons = document.querySelectorAll(".selecting-balloons > img");
 const arrowWrapper = document.querySelector(".arrow-wrapper");
 const targetDiv = document.querySelector(".target-div");
+let mainContainer = document.querySelector(".main")
+
+
 
 // Reset animations
 function resetAnimations() {
@@ -41,7 +50,7 @@ function resetAnimations() {
 
     // Reset balloon position
     popUpBalloons.forEach(balloon => {
-        gsap.set(balloon, { y: "-100%", opacity: 1 });
+        gsap.set(balloon, { y: "-300%", opacity: 1 });
         balloon.classList.add("hidden-selection");
     });
 
@@ -77,7 +86,6 @@ function popContainer() {
 
     gsap.set(randomBalloon, { y: "-150px" });
 
-    setTimeout(() => {
         gsap.to(randomBalloon, {
             y: "100vh",
             duration: 5,
@@ -92,7 +100,6 @@ function popContainer() {
                 }
             }
         });
-    }, 1360);
 }
 
 // Global variable to store animation frame ID
@@ -122,6 +129,8 @@ function chaseBalloon(selectedBalloon, arrowImage) {
         const arrowRect = arrowImage.getBoundingClientRect();
         if (isCollision(arrowRect, balloonRect)) {
             selectingContainer.classList.remove('enable-selection');
+            balloonContainer.classList.add('hide-balloon');
+            mainContainer.classList.remove('winner-popup')
             console.log('Collision detected! Balloon is caught.');
 
             arrowImage.classList.add('hide-arrow');
@@ -143,6 +152,7 @@ function chaseBalloon(selectedBalloon, arrowImage) {
     }
 }
 
+
 // Observe changes in the container class
 const observer2 = new MutationObserver(() => {
     if (selectingContainer.classList.contains('enable-selection')) {
@@ -154,9 +164,6 @@ const observer2 = new MutationObserver(() => {
 
 observer2.observe(selectingContainer, { attributes: true, attributeFilter: ['class'] });
 
-
-
-
 const observer = new MutationObserver(() => {
     if (balloonContainer.classList.contains('hide-balloon')) {
         // Stop animations and reset balloon positions
@@ -167,6 +174,7 @@ const observer = new MutationObserver(() => {
     } else {
         // Restart animation
         animateBalloons();
+        fadeOutBalloons();
     }
 });
 
