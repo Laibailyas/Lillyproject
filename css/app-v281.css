@@ -22724,7 +22724,7 @@ input[type=number]:hover {
     position: absolute;
     top: 9.5vw;
     /* top: 0; */
-    /* background-color: red; */
+    background-color: red;
     left: 50%;
     transform: translateX(-50%);
     z-index: 9999;
@@ -22768,5 +22768,9 @@ input[type=number]:hover {
 @media (max-width: 600px) {
     .main, .mainWrapper{
         height: 500px;
+    }
+
+    .target-div{
+        top: 0;
     }
 }
