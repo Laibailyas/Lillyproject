@@ -1645,7 +1645,7 @@
         const n = { style: { display: "flex", "align-items": "center" } },
           s = (0, t._)(
             "img",
-            { style: { height: "1.5em" }, src: "/icons/favicon-32x32.png" },
+            { style: { height: "1.5em" }, src: "/images/logo-dark-background-39.png" },
             null,
             -1
           ),
