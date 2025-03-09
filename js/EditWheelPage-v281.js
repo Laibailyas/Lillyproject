@@ -5684,9 +5684,9 @@
           gt = (0, t.Uk)(
             "The Pop Wheel Random Question Generator is a versatile tool that offers endless possibilities when it comes to adding variety and excitement to any activity. Whether you're hosting a game night with friends or planning a team-building event at work, this tool can help break the ice and get people talking"
           ),
-          kt = (0, t._)("i", { class: "" }, null, -1),
+          kt = (0, t._)("i", { class: "fas fa-palette" }, null, -1),
           Wt = (0, t.Uk)(""),
-          yt = (0, t.Uk)(" at the top of the page. \n another text"),
+          yt = (0, t.Uk)(" at the top of the page." \n "another text"),
           _t = (0, t.Uk)(""),
           St = (0, t.Uk)(""),
           Ut = (0, t._)("br", null, null, -1),
