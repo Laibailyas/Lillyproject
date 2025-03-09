@@ -5701,14 +5701,14 @@
           ),
           xt = (0, t.Uk)(" "),
           Qt = (0, t.Uk)("   "),
-          Dt = (0, t.Uk)(" Can the wheel be rigged? "),
+          Dt = (0, t.Uk)(" How to Use the Pop It Wheel "),
           zt = (0, t._)(
             "p",
             null,
-            " There is no functionality to determine which entry will win ahead of time. When you click the wheel, it accelerates for exactly one second, then it is set to a random rotation between 0 and 360 degrees, and finally it decelerates to a stop. The setting of a random rotation is not visible to the naked eye as it happens when the wheel is spinning quite fast. ",
+            " Users simply input their questions into the question box and click the spin button at the center of the wheel. The wheel spins, releasing balloons that add festive touch to the experience. When a balloon pops, the fun begins with a random selection of a question, ensuring unpredictability and engagement for everyone involved.",
             -1
           ),
-          Vt = (0, t.Uk)("Randomness of the wheel"),
+          Vt = (0, t.Uk)(""),
           Et = (0, t.Uk)(". "),
           Ft = {
             setup(e) {
