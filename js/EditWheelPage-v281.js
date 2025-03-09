@@ -5696,7 +5696,7 @@
           Zt = (0, t._)(
             "p",
             null,
-            " ",
+            " The Pop It Wheel Random Question Generator is a fun way to engage with your audience and ",
             -1
           ),
           xt = (0, t.Uk)(" How we safeguard your privacy "),
