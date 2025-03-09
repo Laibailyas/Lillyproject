@@ -5692,7 +5692,7 @@
           Ut = (0, t._)("br", null, null, -1),
           bt = (0, t._)("br", null, null, -1),
           Ct = { class: "col-md" },
-          qt = (0, t.Uk)(" Is my data private? "),
+          qt = (0, t.Uk)(" How to use Pop It wheel?"),
           Zt = (0, t._)(
             "p",
             null,
