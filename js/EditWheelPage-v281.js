@@ -5680,9 +5680,9 @@
           ),
           ht = (0, t.Uk)("Sustainability"),
           ft = { class: "col-md" },
-          vt = (0, t.Uk)(" How to use the wheel spinner "),
+          vt = (0, t.Uk)(" Adding Variety to Any Activity "),
           gt = (0, t.Uk)(
-            " It's easy: type in your entries in the textbox to the right of the wheel, then click the wheel to spin it and get a random winner. To make the wheel your own by customizing the colors, sounds, and spin time, click "
+            "The Pop Wheel Random Question Generator is a versatile tool that offers endless possibilities when it comes to adding variety and excitement to any activity. Whether you're hosting a game night with friends or planning a team-building event at work, this tool can help break the ice and get people talking"
           ),
           kt = (0, t._)("i", { class: "fas fa-palette" }, null, -1),
           Wt = (0, t.Uk)(" Customize"),
@@ -5709,7 +5709,7 @@
             -1
           ),
           Vt = (0, t.Uk)(""),
-          Et = (0, t.Uk)(". "),
+          Et = (0, t.Uk)(""),
           Ft = {
             setup(e) {
               const l = (0, s.oR)();
