@@ -5671,14 +5671,14 @@
             -1
           ),
           mt = (0, t.Uk)("   "),
-          pt = (0, t.Uk)(" Does it use renewable energy? "),
+          pt = (0, t.Uk)("Who Can Use the Pop Wheel Random Question Generator?"),
           wt = (0, t._)(
             "p",
             null,
-            " We are proud to share that 100% of the electricity that powers our servers is renewable, and 93% comes from carbon-free energy sources. ",
+            " The Pop It Wheel Random Question Generator is a versatile tool that can be used by anyone in various settings. Some of the groups that can benefit from using this tool include: ● Event planners: Whether organizing a party, social event or team-building activity, the spin the wheel game can add an element of fun and engagement to any gathering. It can help make decision-making fun. ● Teachers and educators: The Pop It Wheel Random Question Generator can be used as a teaching aid to encourage class participation and stimulate discussions. ● Trainers and facilitators: In workshops or training sessions, the game can be used as an icebreaker to help participants get to know each other and break the ice. ● Families and friends: In a casual setting, the spin results can be a great way for families and friends to spend quality time together, spark conversations, and learn more about each other. ● Online communities: With the rise of virtual meetups and online communities, this tool can also be used as an icebreaker or conversation starter in virtual settings. Overall, the Pop It Wheel Random Question Generator is a versatile and engaging tool with numerous benefits for individuals and groups alike.",
             -1
           ),
-          ht = (0, t.Uk)("Sustainability"),
+          ht = (0, t.Uk)(""),
           ft = { class: "col-md" },
           vt = (0, t.Uk)(" Adding Variety to Any Activity "),
           gt = (0, t.Uk)(
