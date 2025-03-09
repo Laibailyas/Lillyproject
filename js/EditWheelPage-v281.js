@@ -5686,7 +5686,7 @@
           ),
           kt = (0, t._)("i", { class: "fas fa-palette" }, null, -1),
           Wt = (0, t.Uk)(""),
-          yt = (0, t.Uk)(" at the top of the page." \n "another text"),
+          yt = (0, t.Uk)(" at the top of the page. Your Pop It Wheel is compatible with mobile devices as well as Desktop and can be easily accessed through a web browser. This makes it convenient for users to create and share their custom wheels anytime, anywhere. The next time you're planning a game night, team-building activity or just need a fun decision-making tool, give Pop It Wheel a try and see how easy and engaging it can be to use! Overall, the Pop It Wheel Random Question Generator is a versatile and engaging tool that has numerous benefits for individuals and groups alike."),
           _t = (0, t.Uk)(""),
           St = (0, t.Uk)(""),
           Ut = (0, t._)("br", null, null, -1),
