@@ -5643,8 +5643,7 @@
           st = (0, t._)(
             "li",
             null,
-            "  It sparks creativity: With random questions being chosen, users are forced to think outside the box and come up with creative answers. Promotes interactive experiences: By injecting an element of surprise and randomness into conversations, the Pop It Wheel Random Question Generator makes interactions more lively and enjoyable. Encourages deeper discussions: The thought-provoking questions provided by the tool can spark meaningful conversations and help people get to know each other better.
- ",
+            "  It sparks creativity: With random questions being chosen, users are forced to think outside the box and come up with creative answers. Promotes interactive experiences: By injecting an element of surprise and randomness into conversations, the Pop It Wheel Random Question Generator makes interactions more lively and enjoyable. Encourages deeper discussions: The thought-provoking questions provided by the tool can spark meaningful conversations and help people get to know each other better. ",
             -1
           ),
           ut = (0, t._)(
