@@ -5696,7 +5696,7 @@
           Zt = (0, t._)(
             "p",
             null,
-            " The Pop It Wheel Random Question Generator is a fun way to engage with your audience and ",
+            " The Pop It Wheel Random Question Generator is a fun way to engage with your audience and encourage participation in various settings. Whether it's a party, classroom, or team-building activity, the Spin the Wheel game adds an element of excitement and unpredictability. ",
             -1
           ),
           xt = (0, t.Uk)(" How we safeguard your privacy "),
