@@ -5692,11 +5692,14 @@
           Ut = (0, t._)("br", null, null, -1),
           bt = (0, t._)("br", null, null, -1),
           Ct = { class: "col-md" },
-          qt = (0, t.Uk)(" How to use Pop It wheel?"),
+          qt = (0, t.Uk)(" What is the Pop It Wheel Random Question Generator?"),
           Zt = (0, t._)(
             "p",
             null,
-            " We are committed to protecting and respecting your privacy and the security of your data. We comply with GDPR, CCPA, SB 190, SB 1392, and we closely monitor changes to them. We follow industry best practices for data encryption and backups. ",
+            " The Pop It Wheel Random Question Generator is a fun way to engage with your audience and
+encourage participation in various settings. Whether it's a party, classroom, or team-building activity,
+the Spin the Wheel game adds an element of excitement and unpredictability.
+",
             -1
           ),
           xt = (0, t.Uk)(" How we safeguard your privacy "),
