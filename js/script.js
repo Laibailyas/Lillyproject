@@ -13,7 +13,7 @@ function animateBalloons() {
         mainContainer.classList.add('winner-popup');
     }
 
-    balloons.forEach(balloon => {
+    balloons.forEach((balloon, index, totalBalloons) => {
         // Store a fixed horizontal position for each balloon
         if (!balloon.dataset.initialX) {
             balloon.dataset.initialX = Math.random() * (balloonContainer.clientWidth * 0.2);
@@ -21,17 +21,22 @@ function animateBalloons() {
 
         function moveBalloon() {
             gsap.set(balloon, {
-                y: "-300%", // Start above the container
-                x: parseFloat(balloon.dataset.initialX), // Use fixed initial horizontal position
+                y: "-300%",
+                x: parseFloat(balloon.dataset.initialX), 
                 opacity: 1,
             });
 
             gsap.to(balloon, {
-                y: bounds.height, // Move to the bottom
-                duration: Math.random() * 5 + 3, // Random duration (3 to 5 seconds)
-                delay: Math.random() * 2, // Random delay (0 to 2 seconds)
+                y: bounds.height, 
+                duration: Math.random() * 5 + 4, // Random duration (4 to 5 seconds)
                 ease: 'linear',
-                onComplete: () => moveBalloon()
+                delay: Math.floor(index / 1) * 1,
+
+                repeat: -1,
+                yoyo: false,
+                onRepeat: () => {
+                    gsap.set(balloon, { y: "-300%" }); // Reset position to the top on each repeat
+                }
             });
         }
 
@@ -89,20 +94,20 @@ function popContainer() {
 
     gsap.set(randomBalloon, { y: "-150px" });
 
-        gsap.to(randomBalloon, {
-            y: "100vh",
-            duration: 5,
-            ease: "power1.inOut",
-            onUpdate: () => {
-                const balloonRect = randomBalloon.getBoundingClientRect();
-                const targetRect = targetDiv.getBoundingClientRect();
+    gsap.to(randomBalloon, {
+        y: "100vh",
+        duration: 5,
+        ease: "power1.inOut",
+        onUpdate: () => {
+            const balloonRect = randomBalloon.getBoundingClientRect();
+            const targetRect = targetDiv.getBoundingClientRect();
 
-                // Start arrow chase when balloon reaches target div
-                if (isCollision(balloonRect, targetRect)) {
-                    chaseBalloon(randomBalloon, arrowWrapper);
-                }
+            // Start arrow chase when balloon reaches target div
+            if (isCollision(balloonRect, targetRect)) {
+                chaseBalloon(randomBalloon, arrowWrapper);
             }
-        });
+        }
+    });
 }
 
 // Global variable to store animation frame ID
@@ -119,7 +124,7 @@ function chaseBalloon(selectedBalloon, arrowImage) {
         const balloonRect = selectedBalloon.getBoundingClientRect();
         const balloonCenter = {
             x: balloonRect.left + balloonRect.width / 2,
-            y: balloonRect.top + balloonRect.height / 2 + 40,
+            y: balloonRect.top + balloonRect.height / 2 + 70,
         };
 
         arrowPos.x += (balloonCenter.x - arrowPos.x) * chaseFactor;
