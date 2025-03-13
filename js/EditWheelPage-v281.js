@@ -5696,7 +5696,13 @@
           Zt = (0, t._)(
             "p",
             null,
-            "The Pop It Wheel Random Question Generator is a fun way to engage with your audience and encourage participation in various settings. Whether it's a party, classroom, or team-building activity, the Spin the Wheel game adds an element of excitement and unpredictability. ",
+            "The Pop It Wheel Random Question Generator is a fun way to engage with your audience and encourage participation in various settings. Whether it's a party, classroom, or team-building activity, the Spin the Wheel game adds an element of excitement and unpredictability.",
+            -1
+          ),
+          PopItLink = (0, t._)(
+            "a",
+            { href: "https://youtube.com/shorts/pFtnamrwYFU" },
+            "Watch the Pop It Wheel Introduction",
             -1
           ),
           xt = (0, t.Uk)(" "),
@@ -5823,6 +5829,7 @@
                         header: (0, t.w5)(() => [qt]),
                         main: (0, t.w5)(() => [
                           Zt,
+                          PopItLink,
                           (0, t._)("p", null, [
                             (0, t.Wm)(
                               o,
