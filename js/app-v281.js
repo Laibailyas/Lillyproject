@@ -2872,7 +2872,7 @@
               (this.colorSettings = [
                 { color: "#3369E8", enabled: !0 },
                 { color: "#D50F25", enabled: !0 },
-                { color: "#EEB211", enabled: !0 },
+                { color: "#E0E101", enabled: !0 },
                 { color: "#009925", enabled: !0 },
                 { color: "#000000", enabled: !1 },
                 { color: "#000000", enabled: !1 },
