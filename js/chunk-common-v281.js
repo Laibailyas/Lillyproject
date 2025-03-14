@@ -280,26 +280,26 @@
 
         function waitForClassRemoval(selector, className) {
           return new Promise((resolve) => {
-              const element = document.querySelector(selector);
-              if (!element) return;
+            const element = document.querySelector(selector);
+            if (!element) return;
 
-              // If class is already removed, resolve immediately
+            // If class is already removed, resolve immediately
+            if (!element.classList.contains(className)) {
+              resolve();
+              return;
+            }
+
+            // Observe class changes
+            const observer = new MutationObserver(() => {
               if (!element.classList.contains(className)) {
-                  resolve();
-                  return;
+                observer.disconnect();
+                resolve();
               }
+            });
 
-              // Observe class changes
-              const observer = new MutationObserver(() => {
-                  if (!element.classList.contains(className)) {
-                      observer.disconnect();
-                      resolve();
-                  }
-              });
-
-              observer.observe(element, { attributes: true, attributeFilter: ['class'] });
+            observer.observe(element, { attributes: true, attributeFilter: ['class'] });
           });
-      }
+        }
         async function p(e, a, l, t) {
           await waitForClassRemoval('.main', 'winner-popup');
           if ("read-winner-sound" == e || "read-winner-sound-2" == e) {
@@ -1022,7 +1022,7 @@
             return !0;
           }
         }
-        
+
         class m {
           constructor(e, a) {
             (e.angle = a),
@@ -1031,7 +1031,7 @@
                 position: e.angle,
               }),
               (this.name = "AnnounceWinnerState");
-              document.querySelector('.selecting-balloons').classList.remove('enable-selection')
+            document.querySelector('.selecting-balloons').classList.remove('enable-selection')
           }
           tick(e) {
             e.spinIsDone(), e.setNewState(new p(e, e.angle));
@@ -1063,7 +1063,7 @@
               console.log("✅ Wheel stopped at angle:", a);
             e.onStateChangeCallback({ name: "Stopped", position: e.angle }),
               (this.name = "StoppedState");
-              document.querySelector('.selecting-balloons').classList.add('enable-selection');
+            document.querySelector('.selecting-balloons').classList.add('enable-selection');
           }
           tick(e) { }
           click(e) {
@@ -1093,7 +1093,7 @@
             return !1;
           }
         }
-        
+
       },
       45890: (e, a, l) => {
         "use strict";
@@ -1132,7 +1132,8 @@
               (this.gradientColor = i.gradientColor),
               (this.image = o);
             const u = this.wheelConfig.getCoalescedColors();
-            (this.color = u[s % u.length]), (this.wheelImages = {});
+            const colors = ["#1ABC9C", "#E67E22", "#8E44AD", "#FD79A8"];
+            this.color = colors[s % colors.length];
           }
           draw(e) {
             if (this.displayText || this.image || this.customBackgoundColor) {
@@ -9100,27 +9101,27 @@
               }
               const U = (0, s.iH)(null);
               function waitForClassRemoval(selector, className) {
-                            return new Promise((resolve) => {
-                                const element = document.querySelector(selector);
-                                if (!element) return;
+                return new Promise((resolve) => {
+                  const element = document.querySelector(selector);
+                  if (!element) return;
 
-                                // If class is already removed, resolve immediately
-                                if (!element.classList.contains(className)) {
-                                    resolve();
-                                    return;
-                                }
+                  // If class is already removed, resolve immediately
+                  if (!element.classList.contains(className)) {
+                    resolve();
+                    return;
+                  }
 
-                                // Observe class changes
-                                const observer = new MutationObserver(() => {
-                                    if (!element.classList.contains(className)) {
-                                        observer.disconnect();
-                                        resolve();
-                                    }
-                                });
+                  // Observe class changes
+                  const observer = new MutationObserver(() => {
+                    if (!element.classList.contains(className)) {
+                      observer.disconnect();
+                      resolve();
+                    }
+                  });
 
-                                observer.observe(element, { attributes: true, attributeFilter: ['class'] });
-                            });
-                        }
+                  observer.observe(element, { attributes: true, attributeFilter: ['class'] });
+                });
+              }
               async function I() {
                 await waitForClassRemoval('.main', 'winner-popup');
                 (0, t.Y3)(() => {
