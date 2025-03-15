@@ -1132,7 +1132,7 @@
               (this.gradientColor = i.gradientColor),
               (this.image = o);
             const u = this.wheelConfig.getCoalescedColors();
-            const colors = ["#1ABC9C", "#E67E22", "#8E44AD", "#FD79A8"];
+            const colors = ["#3369E8", "#D50F25", "#8E44AD", "#EEB211", "#009925"];
             this.color = colors[s % colors.length];
           }
           draw(e) {
